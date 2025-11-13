@@ -1,0 +1,169 @@
+/* FEU-inspired theme */
+:root{
+	--feu-green: #006e2e; /* main background */
+	--feu-yellow: #ffd100; /* buttons */
+	--page-max: 1100px;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{
+	font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+	/* Fallback background color while image loads */
+	background-color: var(--feu-green);
+	color:#fff;
+	line-height:1.4;
+	-webkit-font-smoothing:antialiased;
+	min-height:100vh;
+	position:relative;
+}
+
+/* Full-page background image element (an <img> placed in the document). Replace 'background.jpg' with your campus photo. */
+#page-bg{
+	position:fixed;
+	inset:0;
+	width:100%;
+	height:100%;
+	object-fit:cover;
+	z-index:0;
+	filter:brightness(0.58) saturate(0.95);
+	pointer-events:none; /* so clicks go through to the UI */
+}
+
+/* Ensure main content and navbar appear above the background image */
+.site-header, .navbar, main, .site-footer, .info-card, .form-card{
+	position:relative;
+	z-index:1;
+}
+
+.site-header{display:flex;justify-content:center;padding:28px 16px}
+.navbar{
+	width:100%;max-width:var(--page-max);background:#fff;border-radius:12px;padding:18px 28px;display:flex;align-items:center;gap:24px;box-shadow:0 6px 30px rgba(0,0,0,0.45);
+}
+.nav-left{display:flex;align-items:center;gap:12px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit}
+.brand-logo{width:56px;height:56px;border-radius:50%;object-fit:cover;background:#000;padding:6px}
+.brand-text h1{font-size:20px;margin:0;color:#111}
+.brand-sub{display:block;font-size:12px;color:#666}
+
+.nav-links{list-style:none;display:flex;gap:28px;margin-left:auto;margin-right:auto}
+.nav-links a{color:#333;text-decoration:none;font-weight:500}
+.nav-links a:hover{text-decoration:underline}
+
+.nav-right{margin-left:auto}
+.btn{display:inline-block;padding:10px 18px;border-radius:999px;text-decoration:none;font-weight:700}
+.btn-signup{background:var(--feu-green);color:#fff;border:2px solid rgba(0,0,0,0.06);box-shadow:0 2px 0 rgba(0,0,0,0.06)}
+.btn-primary{background:var(--feu-yellow);color:#111}
+
+.hero{max-width:var(--page-max);margin:36px auto;display:flex;gap:32px;align-items:center;padding:28px;border-radius:12px}
+.hero-content{flex:1;color:#fff}
+.hero-content h2{font-size:34px;margin-bottom:12px}
+.hero-content .lead{opacity:0.95;margin-bottom:18px}
+.hero-image{width:420px;flex:0 0 420px;background:linear-gradient(180deg,rgba(255,255,255,0.06),rgba(0,0,0,0.08));padding:10px;border-radius:12px}
+.hero-image img{width:100%;height:100%;object-fit:cover;border-radius:8px}
+
+.info-card{max-width:var(--page-max);margin:22px auto;padding:20px;background:#fff;border-radius:12px}
+
+/* Footer styles matching FEU theme: green background + yellow accents */
+.site-footer{
+	background: linear-gradient(180deg, var(--feu-green), #004f23);
+	color: #fff;
+	margin-top: 28px;
+	border-radius: 8px;
+	overflow: hidden;
+	box-shadow: 0 6px 30px rgba(0,0,0,0.35);
+}
+.site-footer .footer-inner{max-width:var(--page-max);margin:0 auto;display:flex;gap:32px;padding:28px 32px;align-items:flex-start}
+.site-footer .footer-col{flex:1;min-width:180px}
+.site-footer h4{color:#fff;margin-bottom:8px}
+.site-footer .muted{color:rgba(255,255,255,0.9);margin-bottom:14px}
+.site-footer .socials{display:flex;gap:10px;margin-top:8px}
+.site-footer .social{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:var(--feu-yellow);color:#111;text-decoration:none;font-weight:700;box-shadow:0 2px 0 rgba(0,0,0,0.12)}
+.site-footer .links ul{list-style:none;padding:0;margin:0}
+.site-footer .links li{margin:8px 0}
+.site-footer .links a{color:rgba(255,255,255,0.95);text-decoration:none}
+.site-footer .links a:hover{color:var(--feu-yellow);text-decoration:underline}
+.site-footer .contact p{margin:8px 0;color:rgba(255,255,255,0.95)}
+.site-footer .contact-icon{margin-right:8px;opacity:0.95}
+.site-footer .footer-bottom{background:rgba(0,0,0,0.12);padding:12px 16px;text-align:center;color:#fff;border-top:1px solid rgba(255,255,255,0.04)}
+
+@media (max-width:880px){
+	.site-footer .footer-inner{flex-direction:column;padding:20px}
+	.site-footer .footer-col{min-width:unset}
+}
+
+/* Signup page specific helpers */
+.form-card{max-width:420px;margin:36px auto;background:#fff;padding:22px;border-radius:12px}
+.form-card label{display:block;margin-top:12px;font-weight:600;color:#222}
+.form-card input{width:100%;padding:10px;border-radius:8px;border:1px solid #ddd;margin-top:6px}
+.form-card .btn{width:100%;text-align:center;margin-top:18px}
+
+/* Inline error styles for signup form */
+.error-message{color:#ffb4b4;background:rgba(198,40,40,0.06);padding:6px 8px;border-radius:6px;margin-top:8px;display:none;font-size:0.95rem}
+.input-error{border-color:#c62828!important;box-shadow:0 0 0 3px rgba(198,40,40,0.06)}
+
+@media (max-width:880px){
+	.nav-links{display:none}
+	.hero{flex-direction:column;padding:18px}
+	.hero-image{width:100%;flex:auto}
+}
+
+/* Profile page styles */
+.profile-page{max-width:1100px;margin:30px auto;padding:24px}
+.profile-grid{display:grid;grid-template-columns:1fr 380px;gap:24px;align-items:start}
+.profile-form label, .profile-form input, .profile-form select, .profile-form textarea{display:block;width:100%}
+.profile-form input, .profile-form select, .profile-form textarea{padding:10px;border-radius:8px;border:1px solid #ddd;margin-top:8px}
+.profile-preview h3{margin-top:0}
+.profile-card{display:flex;gap:16px;align-items:flex-start;background:rgba(255,255,255,0.06);padding:12px;border-radius:10px}
+.profile-card img{width:110px;height:110px;object-fit:cover;border-radius:10px}
+.profile-info h4{margin:0 0 6px 0}
+.p-stats{display:flex;gap:12px;list-style:none;padding:0;margin:8px 0}
+.p-stats li{background:rgba(0,0,0,0.12);padding:6px 8px;border-radius:8px}
+
+@media (max-width:880px){
+  .profile-grid{grid-template-columns:1fr}
+  .profile-card{flex-direction:row}
+}
+
+/* Edit profile form styles (two-column, checks, actions) */
+.profile-form h3{margin:0 0 12px 0}
+.profile-form .two-col{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.profile-form label{margin-top:10px;color:#111}
+.profile-form input,.profile-form select,.profile-form textarea{padding:10px;border-radius:8px;border:1px solid #ddd;margin-top:8px}
+.form-photo-wrap{display:flex;justify-content:center;margin-bottom:8px}
+.form-photo{width:96px;height:96px;object-fit:cover;border-radius:12px;border:2px solid rgba(0,0,0,0.06)}
+.input-with-check{position:relative}
+.check-icon{position:absolute;right:10px;top:50%;transform:translateY(-50%);background:rgba(0,0,0,0.06);color:#0b6623;border-radius:50%;width:28px;height:28px;display:none;align-items:center;justify-content:center;font-weight:700}
+.form-actions{display:flex;gap:10px;margin-top:14px}
+.btn-cancel{background:transparent;border:2px solid rgba(255,255,255,0.12);color:#fff;padding:8px 14px;border-radius:8px}
+.btn-primary{background:var(--feu-yellow);color:#111}
+.profile-form .btn-cancel{background:transparent;color:#fff;border:2px solid rgba(255,255,255,0.08)}
+
+@media (max-width:880px){
+	.profile-form .two-col{grid-template-columns:1fr}
+}
+
+/* Workout page styles moved from pages/workout.html */
+.workout-list{display:flex;flex-direction:column;gap:20px}
+.workout-card{display:flex;gap:24px;align-items:center;justify-content:space-between;background:#fff;color:#111;padding:18px;border-radius:12px}
+.workout-card .meta{flex:1}
+.workout-card h4{margin:0 0 10px 0;font-size:1.15rem}
+.workout-card p{margin:0 0 8px 0;color:#333}
+.workout-card .specs{display:flex;gap:12px;margin-top:8px}
+.workout-card .specs span{background:rgba(0,0,0,0.06);padding:8px 10px;border-radius:10px;color:#111;font-weight:700}
+/* Larger, clearer images for workout cards */
+.workout-card img{width:220px;height:140px;object-fit:cover;border-radius:10px;flex:0 0 220px}
+@media (max-width:880px){
+	.workout-card{flex-direction:column;align-items:flex-start}
+	.workout-card img{width:100%;height:220px}
+}
+
+/* Image wrapper and overlay title */
+.img-wrap{position:relative;flex:0 0 220px}
+.img-wrap img{display:block;width:100%;height:100%;border-radius:10px}
+.img-overlay{position:absolute;left:12px;bottom:12px;background:rgba(0,0,0,0.55);color:#fff;padding:8px 12px;border-radius:8px;font-weight:700}
+@media (max-width:880px){
+  .img-wrap{width:100%;flex:auto}
+  .img-overlay{left:12px;right:12px;bottom:16px}
+}
+

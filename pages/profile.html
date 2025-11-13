@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Profile — Fitness FEU</title>
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body>
+    <img id="page-bg" src="../feu background.jpg" alt="FEU campus background" />
+    <header class="site-header">
+      <nav class="navbar">
+        <div class="nav-left">
+          <a class="brand" href="../index.html">
+            <img class="brand-logo" src="../logo.png" alt="FEU logo" />
+            <div class="brand-text">
+              <h1>Fitness FEU</h1>
+            </div>
+          </a>
+        </div>
+        <div class="nav-right">
+          <a class="btn btn-signup" href="../index.html">Home</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+  <section class="card info-card profile-page">
+        <h2>Your Profile</h2>
+        <p class="muted">Add your details below. This demo saves data in your browser (localStorage).</p>
+
+        <div class="profile-grid">
+          <form id="profile-form" class="profile-form">
+            <h3>Edit profile</h3>
+
+            <!-- Photo preview above the name fields -->
+            <div class="form-photo-wrap">
+              <img id="form-photo-preview" src="ilong.png" alt="Profile photo preview" class="form-photo" />
+            </div>
+
+            <div class="two-col">
+              <div>
+                <label for="firstName">First name</label>
+                <input id="firstName" name="firstName" type="text" placeholder="Elijah" />
+              </div>
+              <div>
+                <label for="lastName">Last name</label>
+                <input id="lastName" name="lastName" type="text" placeholder="Del Mundo" />
+              </div>
+            </div>
+
+            <label for="email">Email</label>
+            <div class="input-with-check">
+              <input id="email" name="email" type="email" placeholder="you@feu.edu.ph" />
+              <span class="check-icon" id="email-check" aria-hidden>✓</span>
+            </div>
+
+            <label for="address">Address</label>
+            <input id="address" name="address" type="text" placeholder="123 Main St" />
+
+            <label for="contact">Contact Number</label>
+            <input id="contact" name="contact" type="text" placeholder="+63 9xx xxx xxxx" />
+
+            <div class="two-col">
+              <div>
+                <label for="city">City</label>
+                <select id="city" name="city">
+                  <option value="">Select city</option>
+                  <option>Quezon City</option>
+                  <option>Makati</option>
+                  <option>Cainta</option>
+                </select>
+              </div>
+              <div>
+                <label for="state">State</label>
+                <select id="state" name="state">
+                  <option value="">Select state</option>
+                  <option>Rizal</option>
+                  <option>Metro Manila</option>
+                </select>
+              </div>
+            </div>
+
+            <label for="password">Password</label>
+            <div class="input-with-check">
+              <input id="password" name="password" type="password" placeholder="Create a password" />
+              <span class="check-icon" id="pw-check" aria-hidden>✓</span>
+            </div>
+
+            <div class="form-actions">
+              <button class="btn btn-cancel" id="cancel-edit" type="button">Cancel</button>
+              <button class="btn btn-primary" id="save-btn" type="submit">Save</button>
+            </div>
+          </form>
+
+          <div class="profile-preview">
+            <h3>Preview</h3>
+            <div id="profile-display" class="profile-card">
+              <!-- right-side preview image removed to avoid showing a broken icon -->
+              <div class="profile-info">
+                <h4 id="p-name">Your name</h4>
+                <p id="p-desc" class="muted">Short description will appear here.</p>
+                <!-- age/gender badges removed per request -->
+                <p class="muted"><span id="p-contact">-</span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-col about">
+          <h4>Elijah Del Mundo</h4>
+          <p class="muted">Cybersecurity Enthusiast</p>
+          <div class="socials">
+            <a href="#" class="social" aria-label="Facebook">
+              <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <circle cx="12" cy="12" r="12" fill="#1877F2" />
+                <text x="12" y="16" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#fff">f</text>
+              </svg>
+            </a>
+            <a href="#" class="social" aria-label="GitHub">
+              <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <circle cx="12" cy="12" r="12" fill="#111" />
+                <text x="12" y="15.5" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="700" fill="#fff">GH</text>
+              </svg>
+            </a>
+            <a href="#" class="social" aria-label="Instagram">
+              <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <defs>
+                  <linearGradient id="igGrad" x1="0%" x2="100%" y1="0%" y2="100%">
+                    <stop offset="0%" stop-color="#f58529" />
+                    <stop offset="50%" stop-color="#dd2a7b" />
+                    <stop offset="100%" stop-color="#8134AF" />
+                  </linearGradient>
+                </defs>
+                <rect x="0" y="0" width="24" height="24" rx="6" fill="url(#igGrad)" />
+                <circle cx="12" cy="11" r="3.6" fill="#fff" />
+                <circle cx="17" cy="7" r="0.9" fill="#fff" />
+              </svg>
+            </a>
+            <a href="#" class="social" aria-label="LinkedIn">
+              <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <rect x="0" y="0" width="24" height="24" rx="4" fill="#0077B5" />
+                <text x="12" y="16" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="700" fill="#fff">in</text>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+       
+
+        <div class="footer-col contact">
+          <h4>Contact Info</h4>
+          <p><span class="contact-icon">✉</span> esdelmundo@fit.edu.ph</p>
+          <p><span class="contact-icon">📞</span> +63 (554) 123-4567</p>
+          <p><span class="contact-icon">📍</span> Cainta, Rizal</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© <span id="year"></span> Feuture Billionaires. All rights reserved 2025.</p>
+      </div>
+    </footer>
+
+    <script>
+      
+      const storageKey = 'feu_profile_v1';
+
+      function by(id){ return document.getElementById(id); }
+
+      function getFormData(){
+        return {
+          firstName: by('firstName').value,
+          lastName: by('lastName').value,
+          email: by('email').value,
+          address: by('address').value,
+          contact: by('contact').value,
+          city: by('city').value,
+          state: by('state').value,
+          password: by('password').value
+        };
+      }
+
+      function renderProfile(p){
+        const full = [p.firstName, p.lastName].filter(Boolean).join(' ');
+  const photoSrc = p.photo || '../logo.png';
+  const imgEl = by('img-preview');
+  if(imgEl) imgEl.src = photoSrc;
+  const formImg = by('form-photo-preview');
+  if(formImg) formImg.src = photoSrc;
+        by('p-name').textContent = full || (p.fullname || 'Your name');
+        by('p-desc').textContent = p.desc || '';
+        
+        by('p-contact').textContent = p.contact || '-';
+      }
+
+      function saveProfile(e){
+        if(e) e.preventDefault();
+        const data = getFormData();
+        
+        const existingRaw = localStorage.getItem(storageKey);
+        const existing = existingRaw ? JSON.parse(existingRaw) : {};
+        const saveObj = Object.assign({}, existing, data);
+        localStorage.setItem(storageKey, JSON.stringify(saveObj));
+        renderProfile(saveObj);
+        alert('Profile saved locally (demo).');
+      }
+
+      function loadProfile(){
+        const raw = localStorage.getItem(storageKey);
+        if(!raw) return;
+        try{
+          const p = JSON.parse(raw);
+          by('firstName').value = p.firstName || '';
+          by('lastName').value = p.lastName || '';
+          by('email').value = p.email || '';
+          by('address').value = p.address || '';
+          by('contact').value = p.contact || '';
+          by('city').value = p.city || '';
+          by('state').value = p.state || '';
+          by('password').value = p.password || '';
+          renderProfile(p);
+          updateChecks();
+        }catch(err){ console.error(err); }
+      }
+
+      function clearProfile(){
+        if(confirm('Clear saved profile from this browser?')){
+          localStorage.removeItem(storageKey);
+          document.getElementById('profile-form').reset();
+          renderProfile({});
+        }
+      }
+
+      function validateEmail(email){
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+      }
+
+      function updateChecks(){
+        const emailValid = validateEmail(by('email').value || '');
+        by('email-check').style.display = emailValid ? 'inline-flex' : 'none';
+        const pwValid = (by('password').value || '').length >= 6;
+        by('pw-check').style.display = pwValid ? 'inline-flex' : 'none';
+      }
+
+      document.getElementById('profile-form').addEventListener('submit', saveProfile);
+      document.getElementById('clear-btn')?.addEventListener('click', clearProfile);
+      by('email').addEventListener('input', updateChecks);
+      by('password').addEventListener('input', updateChecks);
+
+      by('cancel-edit').addEventListener('click', function(){
+        
+        loadProfile();
+      });
+
+      document.getElementById('year').textContent = new Date().getFullYear();
+      
+      loadProfile();
+    </script>
+  </body>
+</html>
