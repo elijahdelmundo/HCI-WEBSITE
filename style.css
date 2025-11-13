@@ -42,7 +42,16 @@ body{
 }
 .nav-left{display:flex;align-items:center;gap:12px}
 .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit}
-.brand-logo{width:56px;height:56px;border-radius:50%;object-fit:cover;background:#000;padding:6px}
+.brand-logo{
+	width:56px;
+	height:56px;
+	display:inline-block;
+	object-fit:contain; /* ensure the full logo fits without cropping */
+	border-radius:50%; /* circular mask */
+	overflow:hidden; /* hide overflow so circle crops image cleanly */
+	background:transparent;
+	padding:6px; /* small padding so the logo has breathing room inside the circle */
+}
 .brand-text h1{font-size:20px;margin:0;color:#111}
 .brand-sub{display:block;font-size:12px;color:#666}
 
@@ -131,7 +140,16 @@ body{
 .profile-form label{margin-top:10px;color:#111}
 .profile-form input,.profile-form select,.profile-form textarea{padding:10px;border-radius:8px;border:1px solid #ddd;margin-top:8px}
 .form-photo-wrap{display:flex;justify-content:center;margin-bottom:8px}
-.form-photo{width:96px;height:96px;object-fit:cover;border-radius:12px;border:2px solid rgba(0,0,0,0.06)}
+.form-photo{
+	width:150px; /* increased size */
+	height:150px;
+	object-fit:cover;
+	border-radius:50%; /* circular */
+	border:4px solid var(--feu-yellow); /* slightly thicker ring */
+	box-shadow:0 6px 18px rgba(0,0,0,0.2);
+	background:#fff;
+}
+.form-photo-wrap{display:flex;justify-content:center;margin-bottom:16px} /* more spacing under larger photo */
 .input-with-check{position:relative}
 .check-icon{position:absolute;right:10px;top:50%;transform:translateY(-50%);background:rgba(0,0,0,0.06);color:#0b6623;border-radius:50%;width:28px;height:28px;display:none;align-items:center;justify-content:center;font-weight:700}
 .form-actions{display:flex;gap:10px;margin-top:14px}
@@ -151,11 +169,21 @@ body{
 .workout-card p{margin:0 0 8px 0;color:#333}
 .workout-card .specs{display:flex;gap:12px;margin-top:8px}
 .workout-card .specs span{background:rgba(0,0,0,0.06);padding:8px 10px;border-radius:10px;color:#111;font-weight:700}
-/* Larger, clearer images for workout cards */
-.workout-card img{width:220px;height:140px;object-fit:cover;border-radius:10px;flex:0 0 220px}
+/* Larger, clearer images for workout cards: increase desktop size and ensure full image fits
+   Use object-fit: contain so images of varying aspect ratios are entirely visible. On narrow
+   screens images scale to the layout width and keep their aspect ratio. */
+.workout-card img{
+	width:320px;
+	height:220px;
+	object-fit:contain;
+	background:#f3f3f3; /* shows through if image aspect doesn't fill the box */
+	border-radius:10px;
+	flex:0 0 320px;
+}
 @media (max-width:880px){
 	.workout-card{flex-direction:column;align-items:flex-start}
-	.workout-card img{width:100%;height:220px}
+	/* Let images scale naturally on small screens so they always fit and aren't cropped */
+	.workout-card img{width:100%;height:auto;object-fit:contain}
 }
 
 /* Image wrapper and overlay title */
