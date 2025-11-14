@@ -34,85 +34,69 @@
     </header>
 
     <main>
-  <section class="card info-card profile-page">
-        <h2>Your Profile</h2>
-        <p class="muted">Add your details below. This demo saves data in your browser (localStorage).</p>
+      <section class="card info-card profile-page settings-container">
+        <div class="settings-grid">
+          <aside class="profile-sidebar">
+            <img id="form-photo-preview" src="../elijah.jpg" onerror="this.onerror=null;this.src='../tamarraw.png'" alt="Profile photo" class="profile-avatar" />
+            <h2 id="p-name">Elijah Del Mundo</h2>
+            <p class="muted small" id="p-username">@elijah.s</p>
+            <p class="muted small">Last seen 2 hours ago</p>
+            <div style="margin-top:10px;">
+              <button id="change-photo" class="btn btn-primary">Change Photo</button>
+            </div>
+            <div class="meta-mini" style="margin-top:16px;">
+              <span class="badge muted">administrator</span>
+              <div class="muted small" style="margin-top:8px">Joined 11 Dec 2025</div>
+            </div>
+          </aside>
 
-        <div class="profile-grid">
-          <form id="profile-form" class="profile-form">
-            <h3>Edit profile</h3>
-
-            <!-- Photo preview above the name fields -->
-            <div class="form-photo-wrap">
-              <img id="form-photo-preview" src="../elijah.jpg" onerror="this.onerror=null;this.src='../logo.png'" alt="Profile photo preview" class="form-photo" />
+          <div class="profile-main">
+            <div class="tabs">
+              <button class="tab active">Settings</button>
+              <button class="tab">Security</button>
             </div>
 
-            <div class="two-col">
-              <div>
-                <label for="firstName">First name</label>
-                <input id="firstName" name="firstName" type="text" placeholder="Elijah" />
+            <form id="settings-form" class="settings-form">
+              <div class="form-row two-col">
+                <div>
+                  <label>Full Name</label>
+                  <input id="fullName" type="text" placeholder="Elijah Del Mundo" />
+                </div>
+                <div>
+                  <label>Username</label>
+                  <input id="username" type="text" placeholder="esdelmundo" />
+                </div>
               </div>
-              <div>
-                <label for="lastName">Last name</label>
-                <input id="lastName" name="lastName" type="text" placeholder="Del Mundo" />
+
+              <label>Email</label>
+              <input id="email" type="email" placeholder="name@fit.com" />
+
+              <label>About</label>
+              <textarea id="about" rows="6" placeholder="My Bio"></textarea>
+
+              <div class="form-row two-col cols-equal">
+                <div>
+                  <h4>Change Password</h4>
+                  <label>Current Password</label>
+                  <input id="currentPassword" type="password" />
+                  <label>New Password</label>
+                  <input id="newPassword" type="password" />
+                  <label>Confirm Password</label>
+                  <input id="confirmPassword" type="password" />
+                </div>
+
+                <div>
+                  <h4>Keeping in Touch</h4>
+                  <div class="checkbox"><label><input type="checkbox" checked /> Blog posts</label></div>
+                  <div class="checkbox"><label><input type="checkbox" checked /> Newsletter</label></div>
+                  <div class="checkbox"><label><input type="checkbox" checked /> Personal Offers</label></div>
+                </div>
               </div>
-            </div>
 
-            <label for="email">Email</label>
-            <div class="input-with-check">
-              <input id="email" name="email" type="email" placeholder="you@feu.edu.ph" />
-              <span class="check-icon" id="email-check" aria-hidden>✓</span>
-            </div>
-
-            <label for="address">Address</label>
-            <input id="address" name="address" type="text" placeholder="123 Main St" />
-
-            <label for="contact">Contact Number</label>
-            <input id="contact" name="contact" type="text" placeholder="+63 9xx xxx xxxx" />
-
-            <div class="two-col">
-              <div>
-                <label for="city">City</label>
-                <select id="city" name="city">
-                  <option value="">Select city</option>
-                  <option>Quezon City</option>
-                  <option>Makati</option>
-                  <option>Cainta</option>
-                </select>
+              <div style="text-align:right;margin-top:18px">
+                <button class="btn btn-primary" id="save-settings">Save Changes</button>
               </div>
-              <div>
-                <label for="state">State</label>
-                <select id="state" name="state">
-                  <option value="">Select state</option>
-                  <option>Rizal</option>
-                  <option>Metro Manila</option>
-                </select>
-              </div>
-            </div>
-
-            <label for="password">Password</label>
-            <div class="input-with-check">
-              <input id="password" name="password" type="password" placeholder="Create a password" />
-              <span class="check-icon" id="pw-check" aria-hidden>✓</span>
-            </div>
-
-            <div class="form-actions">
-              <button class="btn btn-cancel" id="cancel-edit" type="button">Cancel</button>
-              <button class="btn btn-primary" id="save-btn" type="submit">Save</button>
-            </div>
-          </form>
-
-          <div class="profile-preview">
-            <h3>Preview</h3>
-            <div id="profile-display" class="profile-card">
-              <!-- right-side preview image removed to avoid showing a broken icon -->
-              <div class="profile-info">
-                <h4 id="p-name">Your name</h4>
-                <p id="p-desc" class="muted">Short description will appear here.</p>
-                <!-- age/gender badges removed per request -->
-                <p class="muted"><span id="p-contact">-</span></p>
-              </div>
-            </div>
+            </form>
           </div>
         </div>
       </section>
@@ -177,45 +161,25 @@
     <script>
       
       const storageKey = 'feu_profile_v1';
-
       function by(id){ return document.getElementById(id); }
 
-      function getFormData(){
-        return {
-          firstName: by('firstName').value,
-          lastName: by('lastName').value,
-          email: by('email').value,
-          address: by('address').value,
-          contact: by('contact').value,
-          city: by('city').value,
-          state: by('state').value,
-          password: by('password').value
-        };
-      }
-
       function renderProfile(p){
-        const full = [p.firstName, p.lastName].filter(Boolean).join(' ');
-  const photoSrc = p.photo || '../logo.png';
-  const imgEl = by('img-preview');
-  if(imgEl) imgEl.src = photoSrc;
-  const formImg = by('form-photo-preview');
-  if(formImg) formImg.src = photoSrc;
-        by('p-name').textContent = full || (p.fullname || 'Your name');
-        by('p-desc').textContent = p.desc || '';
-        
-        by('p-contact').textContent = p.contact || '-';
-      }
-
-      function saveProfile(e){
-        if(e) e.preventDefault();
-        const data = getFormData();
-        
-        const existingRaw = localStorage.getItem(storageKey);
-        const existing = existingRaw ? JSON.parse(existingRaw) : {};
-        const saveObj = Object.assign({}, existing, data);
-        localStorage.setItem(storageKey, JSON.stringify(saveObj));
-        renderProfile(saveObj);
-        alert('Profile saved locally (demo).');
+        // determine full name
+        let full = p && (p.fullName || ([p.firstName,p.lastName].filter(Boolean).join(' '))) || '';
+        if(!full) full = 'Elijah Del Mundo';
+        by('p-name').textContent = full;
+        // set inputs if present
+        if(by('fullName')) by('fullName').value = p && (p.fullName || '') || 'Elijah Del Mundo';
+        if(by('username')) by('username').value = p && (p.username || '') || 'elijah.s';
+        if(by('email')) by('email').value = p && (p.email || '') || 'esdelmundo@fit.edu.ph';
+        if(by('about')) by('about').value = p && (p.about || '') || '';
+        // username display
+        const userDisplay = by('p-username');
+        if(userDisplay) userDisplay.textContent = '@' + (p && (p.username) ? p.username : 'elijah.s');
+        // avatar
+        const avatar = by('form-photo-preview');
+        const imgSrc = p && (p.photo) ? p.photo : '../elijah.jpg';
+        if(avatar) avatar.src = imgSrc;
       }
 
       function loadProfile(){
@@ -223,50 +187,23 @@
         if(!raw) return;
         try{
           const p = JSON.parse(raw);
-          by('firstName').value = p.firstName || '';
-          by('lastName').value = p.lastName || '';
-          by('email').value = p.email || '';
-          by('address').value = p.address || '';
-          by('contact').value = p.contact || '';
-          by('city').value = p.city || '';
-          by('state').value = p.state || '';
-          by('password').value = p.password || '';
           renderProfile(p);
-          updateChecks();
-        }catch(err){ console.error(err); }
+        }catch(e){ console.error(e); }
       }
 
-      function clearProfile(){
-        if(confirm('Clear saved profile from this browser?')){
-          localStorage.removeItem(storageKey);
-          document.getElementById('profile-form').reset();
-          renderProfile({});
-        }
-      }
-
-      function validateEmail(email){
-        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-      }
-
-      function updateChecks(){
-        const emailValid = validateEmail(by('email').value || '');
-        by('email-check').style.display = emailValid ? 'inline-flex' : 'none';
-        const pwValid = (by('password').value || '').length >= 6;
-        by('pw-check').style.display = pwValid ? 'inline-flex' : 'none';
-      }
-
-      document.getElementById('profile-form').addEventListener('submit', saveProfile);
-      document.getElementById('clear-btn')?.addEventListener('click', clearProfile);
-      by('email').addEventListener('input', updateChecks);
-      by('password').addEventListener('input', updateChecks);
-
-      by('cancel-edit').addEventListener('click', function(){
-        
-        loadProfile();
+      // Demo-only: change photo and save buttons
+      by('change-photo').addEventListener('click', function(e){
+        e.preventDefault();
+        alert('Demo: Change Photo is not available in this static demo.');
       });
 
+      by('settings-form').addEventListener('submit', function(e){
+        e.preventDefault();
+        alert('Demo: Save Changes is a demo-only button (no server).');
+      });
+
+      // set footer year and load profile preview from localStorage if present
       document.getElementById('year').textContent = new Date().getFullYear();
-      
       loadProfile();
     </script>
   </body>

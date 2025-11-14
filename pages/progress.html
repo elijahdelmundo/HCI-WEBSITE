@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Progress — Fitness FEU</title>
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body>
+    <img id="page-bg" src="../feu background.jpg" alt="FEU campus background" />
+    <header class="site-header">
+      <nav class="navbar">
+        <div class="nav-left">
+          <a class="brand" href="../index.html">
+            <img class="brand-logo" src="../tamarraw.png" alt="FEU logo" />
+            <div class="brand-text">
+              <h1>Fitness FEU</h1>
+              <small class="brand-sub">@ FEU Tech</small>
+            </div>
+          </a>
+        </div>
+
+        <ul class="nav-links">
+          <li><a href="../index.html#about">About</a></li>
+          <li><a href="workout.html">Workouts</a></li>
+          <li><a href="profile.html">Profile</a></li>
+          <li><a href="../index.html#contact">Contact</a></li>
+        </ul>
+
+        <div class="nav-right">
+          <a class="btn btn-signup" href="signup.html">Sign Up</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="card info-card">
+        <h2>Nutrition</h2>
+        <div class="nutrition-tabs">
+          <button class="tab">Calories</button>
+          <button class="tab">Nutrients</button>
+          <button class="tab active">Macros</button>
+        </div>
+
+        <div class="nutrition-grid">
+          <div class="pie-wrap">
+            <div class="date-row">
+              <div class="nav-arrows">◀</div>
+              <div class="date">Yesterday</div>
+              <div class="nav-arrows">▶</div>
+            </div>
+
+            <!-- Dynamic SVG pie chart (drawn by script to match requested layout) -->
+            <svg id="pie" viewBox="0 0 200 200" class="pie-chart" aria-hidden="true"></svg>
+
+            <div class="macro-legend">
+              <div><span class="dot" style="background:#24B3A6"></span> Carbohydrates (73g)</div>
+              <div><span class="dot" style="background:#8b5cf6"></span> Fat (48g)</div>
+              <div><span class="dot" style="background:#f08"></span> Protein (116g)</div>
+            </div>
+          </div>
+
+          <div class="macro-list">
+            <div class="macro-item">
+              <div class="label">Carbohydrates (73g)</div>
+              <div class="meta"><span class="percent">24%</span><span class="goal">45%</span></div>
+            </div>
+            <div class="macro-item">
+              <div class="label">Fat (48g)</div>
+              <div class="meta"><span class="percent">37%</span><span class="goal">30%</span></div>
+            </div>
+            <div class="macro-item">
+              <div class="label">Protein (116g)</div>
+              <div class="meta"><span class="percent">39%</span><span class="goal">25%</span></div>
+            </div>
+
+            <div class="premium">
+              <div class="crown">👑 Premium Feature</div>
+              <h4>Foods Highest In Carbohydrates</h4>
+              <ol class="food-list">
+                <li>Cookies and Cream (net carbs) <span class="food-count">24</span></li>
+                <li>Protein-Packed Waffle Sliders - Sausage and Egg <span class="food-count">19</span></li>
+                <li>Adobo Rice <span class="food-count">12</span></li>
+                <li>Organic Protein Powder - Plant Based Natural Unsweetened <span class="food-count">7</span></li>
+                <li>Chicken Sisig <span class="food-count">5</span></li>
+              </ol>
+              <a href="#" class="btn btn-primary">View More</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-col about">
+          <h4>Elijah Del Mundo</h4>
+          <p class="muted">Cybersecurity Enthusiast</p>
+          <div class="socials">
+            <a href="#" class="social" aria-label="Facebook">
+              <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <circle cx="12" cy="12" r="12" fill="#1877F2" />
+                <text x="12" y="16" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#fff">f</text>
+              </svg>
+            </a>
+            <a href="#" class="social" aria-label="GitHub">
+              <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <circle cx="12" cy="12" r="12" fill="#111" />
+                <text x="12" y="15.5" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="700" fill="#fff">GH</text>
+              </svg>
+            </a>
+            <a href="#" class="social" aria-label="Instagram">
+              <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <defs>
+                  <linearGradient id="igGradIndex" x1="0%" x2="100%" y1="0%" y2="100%">
+                    <stop offset="0%" stop-color="#f58529" />
+                    <stop offset="50%" stop-color="#dd2a7b" />
+                    <stop offset="100%" stop-color="#8134AF" />
+                  </linearGradient>
+                </defs>
+                <rect x="0" y="0" width="24" height="24" rx="6" fill="url(#igGradIndex)" />
+                <circle cx="12" cy="11" r="3.6" fill="#fff" />
+                <circle cx="17" cy="7" r="0.9" fill="#fff" />
+              </svg>
+            </a>
+            <a href="#" class="social" aria-label="LinkedIn">
+              <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <rect x="0" y="0" width="24" height="24" rx="4" fill="#0077B5" />
+                <text x="12" y="16" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="700" fill="#fff">in</text>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-col contact">
+          <h4>Contact Info</h4>
+          <p><span class="contact-icon">✉</span> esdelmundo@fit.edu.ph</p>
+          <p><span class="contact-icon">📞</span> +63 (554) 123-4567</p>
+          <p><span class="contact-icon">📍</span> Cainta, Rizal</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© <span id="year"></span> Feuture Billionaries. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script>
+      // Draw pie chart so slices, colors and labels match the provided image
+      (function(){
+        const svg = document.getElementById('pie');
+        if(!svg) return;
+        const data = [39,37,24]; // percentages (must sum to 100)
+        const colors = ['#ff6b6b','#8b5cf6','#24B3A6']; // pink, purple, teal
+        const W = 200, H = 200, R = 80, CX = 100, CY = 100;
+        const toRad = d => (d-90) * Math.PI/180; // start from top by default
+
+        // start angle offset so pink slice appears on the right as in the example
+        let startDeg = -30;
+        let cumulative = startDeg;
+
+        function polar(cx,cy,r,deg){
+          const rad = deg * Math.PI/180;
+          return [cx + r * Math.cos(rad), cy + r * Math.sin(rad)];
+        }
+
+        data.forEach((pct,i)=>{
+          const angle = pct/100 * 360;
+          const start = cumulative;
+          const end = cumulative + angle;
+          const large = angle > 180 ? 1 : 0;
+          const [sx,sy] = polar(CX,CY,R,start);
+          const [ex,ey] = polar(CX,CY,R,end);
+          const d = [`M ${CX} ${CY}`, `L ${sx} ${sy}`, `A ${R} ${R} 0 ${large} 1 ${ex} ${ey}`, 'Z'].join(' ');
+          const path = document.createElementNS('http://www.w3.org/2000/svg','path');
+          path.setAttribute('d', d);
+          path.setAttribute('fill', colors[i]);
+          // no stroke so slices touch each other with no white gap
+          path.setAttribute('stroke','none');
+          svg.appendChild(path);
+
+          // label inside slice
+          const mid = start + angle/2;
+          const [lx,ly] = polar(CX,CY,R*0.58,mid);
+          const txt = document.createElementNS('http://www.w3.org/2000/svg','text');
+          txt.setAttribute('x', lx);
+          txt.setAttribute('y', ly+5);
+          txt.setAttribute('fill','#fff');
+          txt.setAttribute('font-weight','700');
+          txt.setAttribute('font-size','14');
+          txt.setAttribute('text-anchor','middle');
+          txt.textContent = pct + '%';
+          svg.appendChild(txt);
+
+          cumulative += angle;
+        });
+
+        // removed white center so the pie is solid (no hole)
+      })();
+
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>

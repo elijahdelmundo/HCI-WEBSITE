@@ -150,6 +150,32 @@ body{
 	background:#fff;
 }
 .form-photo-wrap{display:flex;justify-content:center;margin-bottom:16px} /* more spacing under larger photo */
+
+/* Settings/profile layout (two-column) */
+.settings-container{padding:18px}
+.settings-grid{display:grid;grid-template-columns:260px 1fr;gap:24px;align-items:start}
+.profile-sidebar{background:transparent;padding:10px 6px}
+.profile-avatar{width:140px;height:140px;border-radius:50%;object-fit:cover;border:3px solid var(--feu-yellow);display:block;margin:0 auto}
+.profile-sidebar h2{margin:10px 0 4px 0;color:#111}
+.profile-sidebar .small{font-size:0.9rem}
+.badge{display:inline-block;background:rgba(0,0,0,0.06);color:#111;padding:4px 8px;border-radius:6px;font-weight:700}
+
+.profile-main{background:#fff;padding:18px;border-radius:10px;color:#111}
+.tabs{display:flex;gap:8px;margin-bottom:12px}
+.tab{background:transparent;border:0;padding:8px 12px;border-radius:6px;font-weight:700;color:#333}
+.tab.active{background:rgba(0,0,0,0.06)}
+
+.settings-form label{display:block;margin-top:10px;font-weight:600;color:#333}
+.settings-form input,.settings-form textarea{width:100%;padding:10px;border-radius:8px;border:1px solid #ddd;margin-top:6px}
+.settings-form textarea{resize:vertical}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.cols-equal .two-col div{min-height:0}
+.checkbox{margin:8px 0}
+
+@media (max-width:880px){
+	.settings-grid{grid-template-columns:1fr;}
+	.profile-avatar{margin:0 auto 8px}
+}
 .input-with-check{position:relative}
 .check-icon{position:absolute;right:10px;top:50%;transform:translateY(-50%);background:rgba(0,0,0,0.06);color:#0b6623;border-radius:50%;width:28px;height:28px;display:none;align-items:center;justify-content:center;font-weight:700}
 .form-actions{display:flex;gap:10px;margin-top:14px}
@@ -193,5 +219,31 @@ body{
 @media (max-width:880px){
   .img-wrap{width:100%;flex:auto}
   .img-overlay{left:12px;right:12px;bottom:16px}
+}
+
+/* Progress / Nutrition page styles */
+.nutrition-tabs{display:flex;gap:8px;margin-bottom:14px}
+.nutrition-tabs .tab{background:transparent;border:0;padding:8px 12px;border-radius:6px;font-weight:700;color:#333}
+.nutrition-tabs .tab.active{background:rgba(0,0,0,0.06)}
+.nutrition-grid{display:flex;gap:20px;align-items:flex-start}
+.pie-wrap{flex:0 0 360px;text-align:center}
+.pie-chart{width:220px;height:220px;margin:6px auto 12px;display:block}
+.macro-legend{display:grid;grid-template-columns:1fr;gap:8px;text-align:left;color:#333}
+.macro-legend .dot{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:8px;vertical-align:middle}
+.macro-list{flex:1;background:#fff;padding:16px;border-radius:10px;color:#111}
+.macro-item{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid rgba(0,0,0,0.04)}
+.macro-item .label{font-weight:700}
+.macro-item .meta{display:flex;gap:12px;align-items:center}
+.macro-item .percent{background:rgba(0,0,0,0.06);padding:6px 10px;border-radius:8px;font-weight:700}
+.macro-item .goal{color:#999}
+.premium{margin-top:18px;padding-top:12px}
+.premium .crown{font-weight:800;color:#b58900;margin-bottom:6px}
+.food-list{list-style:none;padding:0;margin:0}
+.food-list li{padding:8px 0;border-bottom:1px solid rgba(0,0,0,0.04);display:flex;justify-content:space-between}
+.food-count{color:#777}
+
+@media (max-width:880px){
+	.nutrition-grid{flex-direction:column}
+	.pie-wrap{flex:auto}
 }
 
