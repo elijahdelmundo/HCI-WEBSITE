@@ -21,10 +21,10 @@
         </div>
 
         <ul class="nav-links">
-          <li><a href="../index.html#about">About</a></li>
-          <li><a href="workout.html">Workouts</a></li>
+          <li><a href="../index.html#about">Home</a></li>
+          <li><a href="about.html">About</a></li>
           <li><a href="profile.html">Profile</a></li>
-          <li><a href="../index.html#contact">Contact</a></li>
+          <li><a href="progress.html">Progress</a></li>
         </ul>
 
         <div class="nav-right">
@@ -48,6 +48,9 @@
                 <span>Sets: 2–3</span>
               </div>
             </div>
+            <div class="card-actions">
+              <button class="btn btn-cancel btn-remove">Remove</button>
+            </div>
             <img src="../barbell.gif" alt="Full body strength" />
           </article>
 
@@ -59,6 +62,9 @@
                 <span>Reps: 3–5</span>
                 <span>Sets: 1–2</span>
               </div>
+            </div>
+            <div class="card-actions">
+              <button class="btn btn-cancel btn-remove">Remove</button>
             </div>
             <img src="../deadlift.webp" alt="Deadlifts" />
           </article>
@@ -72,6 +78,9 @@
                 <span>Sets: 2–3</span>
               </div>
             </div>
+            <div class="card-actions">
+              <button class="btn btn-cancel btn-remove">Remove</button>
+            </div>
             <img src="../bench.jpg" alt="Bench press" />
           </article>
 
@@ -83,6 +92,9 @@
                 <span>Reps: 8–15</span>
                 <span>Sets: 3–4</span>
               </div>
+            </div>
+            <div class="card-actions">
+              <button class="btn btn-cancel btn-remove">Remove</button>
             </div>
             <img src="../pullup.gif" alt="Pull ups" />
           </article>
@@ -96,8 +108,17 @@
                 <span>Sets: 2–3</span>
               </div>
             </div>
+            <div class="card-actions">
+              <button class="btn btn-cancel btn-remove">Remove</button>
+            </div>
             <img src="../press.webp" alt="Overhead press" />
           </article>
+        </div>
+        
+        <!-- Demo-only action buttons (for show) -->
+        <div class="workout-actions" style="margin-top:18px;display:flex;gap:12px;justify-content:flex-end">
+          <button class="btn btn-primary" id="demo-add">Add</button>
+          <button class="btn btn-cancel" id="demo-remove">Remove</button>
         </div>
       </section>
     </main>
@@ -105,8 +126,7 @@
     <footer class="site-footer">
       <div class="footer-inner">
         <div class="footer-col about">
-          <h4>Elijah Del Mundo</h4>
-          <p class="muted">Cybersecurity Enthusiast</p>
+          
           <div class="socials">
             <a href="#" class="social" aria-label="Facebook">
               <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
@@ -156,6 +176,32 @@
       </div>
     </footer>
 
-    <script>document.getElementById('year')?.textContent = new Date().getFullYear();</script>
+    <script>
+      // Demo handlers for the Add / Remove buttons — purely non-destructive, for show.
+      document.getElementById('demo-add')?.addEventListener('click', function(){
+        alert('Demo: Add button clicked — this is only a visual demo.');
+      });
+      document.getElementById('demo-remove')?.addEventListener('click', function(){
+        alert('Demo: Remove button clicked — this is only a visual demo.');
+      });
+
+      // Per-card Remove buttons: fade out and remove the card from DOM (demo-only, not persisted)
+      document.querySelectorAll('.btn-remove').forEach(btn => {
+        btn.addEventListener('click', function(e){
+          const card = btn.closest('.workout-card');
+          const title = card?.querySelector('h4')?.textContent || 'workout';
+          if(!card) return;
+          // visual fade then remove
+          card.style.transition = 'opacity 220ms, transform 220ms';
+          card.style.opacity = '0';
+          card.style.transform = 'translateY(8px)';
+          setTimeout(()=> card.remove(), 260);
+          // small alert to make the demo action obvious
+          setTimeout(()=> alert(`Demo: Removed "${title}" (not saved)`), 280);
+        });
+      });
+
+      document.getElementById('year')?.textContent = new Date().getFullYear();
+    </script>
   </body>
 </html>

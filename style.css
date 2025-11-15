@@ -171,6 +171,10 @@ body{
 .two-col{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .cols-equal .two-col div{min-height:0}
 .checkbox{margin:8px 0}
+/* Make checkbox labels display with text left and checkbox on the right */
+.checkbox label{display:flex;justify-content:space-between;align-items:center;padding:6px 0;color:#333}
+.checkbox label span{font-weight:600}
+.checkbox input{margin-left:12px;width:18px;height:18px;accent-color:var(--feu-green)}
 
 @media (max-width:880px){
 	.settings-grid{grid-template-columns:1fr;}

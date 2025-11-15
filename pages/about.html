@@ -3,12 +3,11 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Sign Up — Fitness FEU</title>
+    <title>About — Fitness FEU</title>
     <link rel="stylesheet" href="../style.css" />
   </head>
   <body>
-  
-  <img id="page-bg" src="../feu background.jpg" alt="FEU campus background" />
+    <img id="page-bg" src="../feu background.jpg" alt="FEU campus background" />
     <header class="site-header">
       <nav class="navbar">
         <div class="nav-left">
@@ -22,7 +21,7 @@
         </div>
 
         <ul class="nav-links">
-          <li><a href="../index.html#about">About</a></li>
+          <li><a href="../index.html#about">Home</a></li>
           <li><a href="workout.html">Workouts</a></li>
           <li><a href="profile.html">Profile</a></li>
           <li><a href="progress.html">Progress</a></li>
@@ -35,23 +34,22 @@
     </header>
 
     <main>
-      <section class="form-card">
-        <h2>Create your account</h2>
-        <p class="muted">Simplifies the onboarding process by asking only necessary information (email, password, name). Reduces cognitive load for new users.</p>
+      <section class="card info-card" style="text-align:center;">
+        <h2>About us</h2>
 
-          <form action="#" method="post" id="signup-form">
-            <p class="muted">These fields are for demonstration only.</p>
-            <label for="name">Full name</label>
-            <input id="name" name="name" type="text" value="Elijah Del Mundo" readonly />
+        <div style="max-width:760px;margin:18px auto 8px;">
+          <img src="../group.jpg" alt="Team photo" style="width:360px;max-width:100%;height:auto;border-radius:6px;display:block;margin:10px auto;box-shadow:0 6px 18px rgba(0,0,0,0.12)" />
+        </div>
 
-            <label for="email">Email</label>
-            <input id="email" name="email" type="email" value="esdelmundo@fit.edu.ph" readonly />
+        <div style="max-width:820px;margin:18px auto;color:#333;background:#fff;padding:18px;border-radius:8px;text-align:left;">
+          <p>We’re a fully distributed team of people living and working in multiple places across the Philippines. Our mission is to make fitness tracking simple, approachable, and community-driven for FEU students and staff.</p>
 
-            <label for="password">Password</label>
-            <input id="password" name="password" type="password" value="••••••••" readonly />
+          <p>Fitness FEU began as a weekend project to make logging meals and workouts easier for campus life. Over time it grew into a small, focused tool that keeps what matters: logging, progress visibility, and friendly guidance.</p>
 
-            <button class="btn btn-primary" type="submit">Sign up</button>
-          </form>
+          <p>We believe good software should get out of the way. That’s why Fitness FEU focuses on clarity, accessibility, and fast interactions — whether you’re adding a workout, checking progress, or sharing tips with friends.</p>
+
+          <p style="margin-top:10px;font-weight:700">Want to get involved or report an issue? Reach out at <a href="mailto:esdelmundo@fit.edu.ph">esdelmundo@fit.edu.ph</a>.</p>
+        </div>
       </section>
     </main>
 
@@ -75,13 +73,13 @@
             <a href="#" class="social" aria-label="Instagram">
               <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
                 <defs>
-                  <linearGradient id="igGrad2" x1="0%" x2="100%" y1="0%" y2="100%">
+                  <linearGradient id="igGradAbout" x1="0%" x2="100%" y1="0%" y2="100%">
                     <stop offset="0%" stop-color="#f58529" />
                     <stop offset="50%" stop-color="#dd2a7b" />
                     <stop offset="100%" stop-color="#8134AF" />
                   </linearGradient>
                 </defs>
-                <rect x="0" y="0" width="24" height="24" rx="6" fill="url(#igGrad2)" />
+                <rect x="0" y="0" width="24" height="24" rx="6" fill="url(#igGradAbout)" />
                 <circle cx="12" cy="11" r="3.6" fill="#fff" />
                 <circle cx="17" cy="7" r="0.9" fill="#fff" />
               </svg>
@@ -95,28 +93,19 @@
           </div>
         </div>
 
-        
-
         <div class="footer-col contact">
           <h4>Contact Info</h4>
-          <p><span class="contact-icon">✉</span> delmundoelijah11@gmail.com</p>
+          <p><span class="contact-icon">✉</span> esdelmundo@fit.edu.ph</p>
           <p><span class="contact-icon">📞</span> +63 (554) 123-4567</p>
           <p><span class="contact-icon">📍</span> Cainta, Rizal</p>
         </div>
       </div>
 
       <div class="footer-bottom">
-        <p>© <span id="year"></span> Elijah Del Mundo. All rights reserved.</p>
+        <p>© <span id="year"></span> Feuture Billionaries. All rights reserved.</p>
       </div>
     </footer>
 
-    <script>
-      // Simple demo handler: fields are read-only and shown for presentation only.
-      document.getElementById('year').textContent = new Date().getFullYear();
-      document.getElementById('signup-form').addEventListener('submit', function(e){
-        e.preventDefault();
-        alert('Demo: sign up fields are for show only.');
-      });
-    </script>
+    <script>document.getElementById('year')?.textContent = new Date().getFullYear();</script>
   </body>
 </html>
