@@ -246,6 +246,10 @@ body{
 .food-list li{padding:8px 0;border-bottom:1px solid rgba(0,0,0,0.04);display:flex;justify-content:space-between}
 .food-count{color:#777}
 
+/* About page list styling */
+.about-list{list-style:disc; margin:12px 0 0 20px; color:#333}
+.about-list li{margin-bottom:12px;line-height:1.6}
+
 @media (max-width:880px){
 	.nutrition-grid{flex-direction:column}
 	.pie-wrap{flex:auto}
